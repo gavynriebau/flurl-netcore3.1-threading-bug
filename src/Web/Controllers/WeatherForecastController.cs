@@ -19,6 +19,8 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<string> Get()
         {
+            // Inside the integration test, this call should return a mocked HTTP response but doesn't.
+            // Instead an actual call to the non-existent URL is attempted which causes an exception to be thrown.
             var test = await "http://nonexistenturl-asdjhasdhj.com".PostJsonAsync(new {
                 FakeData = "stuff"
             });
