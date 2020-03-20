@@ -52,7 +52,7 @@ is attempted and fails, causing the test to fail.
 In the Flurl library [HttpTest.cs](https://github.com/tmenier/Flurl/blob/dev/src/Flurl.Http/Testing/HttpTest.cs#L109) the behavior of the `GetCurrentTest` method is changed for different .NET versions using preprocessor directives.
 
 In .NET core 3.1 the code inside the `else` preprocessor directive is executed and because this uses Thread local state
-the `HttpTest` setup is lost when integration tests are run.
+the `HttpTest` setup is lost when integration tests are run as they run on a separate thread.
 
 ```csharp
 #if NET45
