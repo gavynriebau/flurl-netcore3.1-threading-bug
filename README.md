@@ -1,5 +1,7 @@
 # Flurl threading bug
 
+**_The below problem turned out to be due to a change in behavior in .NET core 3.1 and not an issue in the Flurl library, for details see [this issue](https://github.com/tmenier/Flurl/issues/504#event-3153301423)_**
+
 This repo contains the minimal code required to replicate a possible bug in the
 Flurl library.
 
